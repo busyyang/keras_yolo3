@@ -97,3 +97,10 @@ If you want to use original pretrained weights for YOLOv3:
 6. The training strategy is for reference only. Adjust it according to your dataset and your goal. And add further strategy if needed.
 
 7. For speeding up the training process with frozen layers train_bottleneck.py can be used. It will compute the bottleneck features of the frozen model first and then only trains the last layers. This makes training on CPU possible in a reasonable time. See [this](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) for more information on bottleneck features.
+
+
+## Monitor
+打开`monitor.py`文件，是通过PyQt实现的监控程序，在监控中调用了YOLO进行目标检测，在1060显卡中FPS≈12，支持本地摄像头以及IP摄像头等。摄像头textEdit内可以填写`0`,`rtps://`等。文件的textEdit内填写文件地址可播放视频文件，并进行目标识别。
+~~~bash
+python monitor.py
+~~~
